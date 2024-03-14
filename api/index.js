@@ -14,7 +14,8 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
     console.log(process.env.BOT_TOKEN);
     res.json({
-        message: process.env.BOT_TOKEN
+        BOT_TOKEN: process.env.BOT_TOKEN,
+        CHAT_ID: process.env.CHAT_ID,
     });
 });
 
