@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
 const url = 'https://api.telegram.org/bot';
-
+const cors = require('cors');
 app.use(bodyParser.json());
-
+app.use(cors());
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
@@ -61,7 +61,7 @@ app.get('/uploadUser', function (req, res) {
 
 
 
-app.listen(3000, () => console.log('Server ready on port 3000.'));
+app.listen(8000, () => console.log('Server ready on port 8000.'));
 
 module.exports = app;
 
